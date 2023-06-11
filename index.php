@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" integrity="sha384-PJsj/BTMqILvmcej7ulplguok8ag4xFTPryRq8xevL7eBYSmpXKcbNVuy+P0RMgq" crossorigin="anonymous">
     <link rel="stylesheet" href="public/css/login.css">
+    <link rel="stylesheet" href="public/css/estilos.css">
 
     <title>Login de usuario</title>
   </head>
@@ -23,9 +24,9 @@
               <h3 class="login-heading mb-4">Bienvenido de nuevo</h3>
 
               <!-- Sign In Form -->
-              <form>
+              <form action="servidor/login/logear.php" method="post">
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="usuario" placeholder="Usuario">
+                  <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario">
                   <label for="usuario">Usuario</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -34,9 +35,9 @@
                 </div>
 
                 <div class="d-grid">
-                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Entrar</button>
+                  <button class="btn btn-lg btn-purple btn-login text-uppercase fw-bold mb-2" type="submit">Entrar</button>
                   <div class="text-center">
-                    <a class="small" href="registro.php">Registrate aqui!</a>
+                    <a class="small" href="registro.php">Registrate aqui</a>
                   </div>
                 </div>
 
