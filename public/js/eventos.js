@@ -9,7 +9,7 @@ function agregarEvento(){
         url:"../servidor/eventos/agregar.php",
         success:function(respuesta){
             $('#tablaEventos').load('eventos/tabla_eventos.php');
-            $('#configform')[0].rest();
+            $('#frmAgregarEvento')[0].rest();
             if(respuesta == 1){
                 Swal.fire({
                     title: 'Exito!',
