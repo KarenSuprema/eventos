@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../public/css/estilos.css">
     <link rel="stylesheet" href="../public/librerias/fontawesome-free-6.4.0-web/css/all.css">
     <link rel="stylesheet" href="../public/librerias/datatables/datatables.css">
+  
 
     <title>SIE</title>
   </head>
