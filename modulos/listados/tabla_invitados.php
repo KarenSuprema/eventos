@@ -28,7 +28,7 @@
             </span>                
             </th> 
             <th>
-            <span class="btn btn-danger">
+            <span class="btn btn-danger" onclick="eliminarInvitado('<?php echo $key['idInvitado'] ?>')">
                 <i class="fa-solid fa-trash"></i>
             </span>                
             </th> 
