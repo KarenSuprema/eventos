@@ -23,7 +23,8 @@
             <th><?php echo $key['hora_fin'] ?></th> 
             <th><?php echo $key['fecha'] ?></th> 
             <th>
-                <span class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal_editar_evento">
+                <span class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal_editar_evento"
+                onclick="editarEvento('<?php echo $key['id_evento'] ?>')">
                     <i class="fa-solid fa-pen-to-square"></i>
                 </span>
             </th> 

@@ -47,5 +47,47 @@
             }
             return $select .='</select>';
         }
+        
+        public function selectEventosEditar($id_usuario) {
+            $conexion = Conexion::conectar();
+            $sql = "SELECT * FROM t_eventos 
+                    WHERE id_usuario = '$id_usuario'";
+            $respuesta = mysqli_query($conexion, $sql);
+            $select = '<label for="id_eventoe">Selecciona un evento</label>
+                        <select name="id_eventoe" id="id_eventoe" class="form-select" required>';
+
+            while ($mostrar = mysqli_fetch_array($respuesta)) {
+                $select .= '<option 
+                            value='. $mostrar['id_evento'] . '>' . 
+                                $mostrar['evento'] .
+                            '</option>'; 
+            }
+
+            return $select .= '</select>';
+        }
+
+        public function editarInvitado($id_invitado){
+            $conexion = Conexion::conectar();
+            $sql = "SELECT * FROM t_invitados 
+                    WHERE id_invitado = '$id_invitado'";
+            $respuesta = mysqli_query($conexion, $sql);
+            return mysqli_fetch_all($respuesta, MYSQLI_ASSOC);
+        }
+
+        public function actualizarInvitado($data){
+            $conexion = Conexion::conectar();
+            $sql = "UPDATE t_invitados SET id_evento = ?,
+                                           nombre_invitado = ?,
+                                           email = ? 
+                    WHERE id_invitado = ? ";
+            $query = $conexion->prepare($sql);
+            $query->bind_param('issi', $data['id_evento'],
+                                        $data['nombre_invitado'],
+                                        $data['email'],
+                                        $data['id_invitado']);
+            return $query->execute();
+
+        }
+
     }
 ?>

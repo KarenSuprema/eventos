@@ -18,19 +18,22 @@
     <tbody>
         <?php foreach ($items as $key): ?>   
         <tr>
-            <th><?php echo $key['nombre'] ?></th> 
-            <th><?php echo $key['email'] ?></th>
-            <th><?php echo $key['nombreEvento'] ?></th> 
-            <th><?php echo $key['fechaEvento'] ?></th> 
+            <td><?php echo $key['nombre'] ?></td> 
+            <td><?php echo $key['email'] ?></td>
+            <td><?php echo $key['nombreEvento'] ?></td> 
+            <td><?php echo $key['fechaEvento'] ?></td> 
+            <td>
+            <span class="btn btn-warning" data-bs-toggle="modal" 
+                data-bs-target="#modal_editar_invitado" 
+                onclick="editarInvitado('<?php echo $key['idInvitado'] ?>')">
+                    <i class="fa-solid fa-user-pen"></i>
+                </span>             
+            </td> 
             <th>
-            <span class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal_editar_invitado">
-                <i class="fa-solid fa-user-pen"></i>
-            </span>                
-            </th> 
-            <th>
-            <span class="btn btn-danger" onclick="eliminarInvitado('<?php echo $key['idInvitado'] ?>')">
-                <i class="fa-solid fa-trash"></i>
-            </span>                
+            <span class="btn btn-danger" 
+                onclick="eliminarInvitado('<?php echo $key['idInvitado'] ?>')">
+                    <i class="fa-solid fa-user-xmark"></i>
+                </span>             
             </th> 
         </tr>
         <?php endforeach; ?>

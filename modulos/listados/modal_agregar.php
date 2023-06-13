@@ -1,6 +1,4 @@
 <?php
-    include "../clases/Invitados.php";
-    $Invitados = new Invitados();
     $select = $Invitados->selectEventos();
 ?>
 <form id="frmAgregarInvitado" onsubmit="return agregarInvitado()">

@@ -64,3 +64,44 @@ function eliminarInvitado(id_invitado) {
         }
       })
 }
+
+function editarInvitado(id_invitado){
+    $.ajax({
+        type:"POST",
+        url:"../servidor/invitados/editar.php",
+        data:"id_invitado=" + id_invitado,
+        success : function(respuesta){
+            respuesta = jQuery.parseJSON( respuesta );
+            $('#emailu').val(respuesta[0].email);
+            $('#id_eventoe').val(respuesta[0].id_evento);
+            $('#id_invitado').val(respuesta[0].id_invitado);
+            $('#nombre_invitadou').val(respuesta[0].nombre_invitado);
+        }         
+    });
+}
+
+function actualizarInvitado(){
+    $.ajax({
+        type:"POST",
+        data:$('#frmEditarInvitado').serialize(),
+        url:"../servidor/invitados/actualizar.php",
+        success:function(respuesta) {
+            if (respuesta == 1) {
+                $('#tablaInvitados').load('listados/tabla_invitados.php');
+                Swal.fire({
+                    title: 'Exito!',
+                    text: 'Actualizado',
+                    icon: 'success'
+                })
+            } else {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Fallo con ' + respuesta,
+                    icon: 'error'
+                })
+            }
+        }
+    });
+    return false;
+
+}
