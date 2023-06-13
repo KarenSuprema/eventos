@@ -14,7 +14,7 @@
         <div class="card mt-3">
             <div class="card-body">
            <h2>Invitados</h2>
-           <span class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#modal_agregar_invitado">NUEVO INVITADO</span>
+           <span class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#modal_agregar_invitado">NUEVO INVITADO <i class="fa-solid fa-user-plus"></i></span>
            <hr> 
            <div id="tablaInvitados"></div>
         </div>

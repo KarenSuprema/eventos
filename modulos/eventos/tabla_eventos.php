@@ -1,7 +1,7 @@
-<?php
+<?php session_start();
     include "../../clases/Eventos.php";
     $Eventos = new Eventos();
-    $items = $Eventos->mostrarEventos();
+    $items = $Eventos->mostrarEventos($_SESSION['id_usuario']);
 ?>
 
 <table class="table table-sm table-hover" id="tabla_eventos_load">
@@ -40,6 +40,13 @@
 
 <script>
     $(document).ready(function(){
-        $('#tabla_eventos_load').DataTable();
-     });
+        $('#tabla_eventos_load').DataTable({
+          "language": {
+            "url": "../public/librerias/datatables/spanish.json"
+        
+           }
+
+         });
+        
+    });
 </script>

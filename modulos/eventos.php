@@ -11,7 +11,7 @@
         <div class="card mt-3">
             <div class="card-body">
             <h2>Eventos</h2>
-            <span class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#modal_agregar_evento">NUEVO EVENTO</span>
+            <span class="btn btn-purple" data-bs-toggle="modal" data-bs-target="#modal_agregar_evento">NUEVO EVENTO <i class="fa-regular fa-calendar-plus"></i></i></span>
             <hr>
             <div id="tablaEventos"></div>
             

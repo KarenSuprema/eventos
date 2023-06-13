@@ -2,9 +2,9 @@
     include "Conexion.php";
 
     class Eventos extends Conexion {
-        public function mostrarEventos(){
+        public function mostrarEventos($id_usuario){
             $conexion = Conexion::conectar();
-            $sql = "SELECT * FROM t_eventos";
+            $sql = "SELECT * FROM t_eventos WHERE id_usuario = '$id_usuario'";
             $respuesta = mysqli_query($conexion, $sql);
             return mysqli_fetch_all($respuesta, MYSQLI_ASSOC);
         }

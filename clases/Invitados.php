@@ -3,9 +3,10 @@
 
     class Invitados extends Conexion {
 
-        public function mostrarInvitados() {
+        public function mostrarInvitados($id_usuario) {
             $conexion = Conexion::conectar();
-            $sql = "SELECT * FROM v_invitados";
+            $sql = "SELECT * FROM v_invitados WHERE
+            id_usuario = 'id_usuario';";
             $respuesta = mysqli_query($conexion, $sql);
             return mysqli_fetch_all($respuesta, MYSQLI_ASSOC);
         }
@@ -32,9 +33,9 @@
         }
          
 
-        public function selectEventos() {
+        public function selectEventos($id_usuario) {
             $conexion = Conexion::conectar();
-            $sql = "SELECT * FROM t_eventos";
+            $sql = "SELECT * FROM t_eventos WHERE id_usuario = '$id_usuario'";
             $respuesta = mysqli_query($conexion, $sql);
             $select = '<label for="id_evento">Selecciona un evento</label>
                         <select name="id_evento" id="id_evento" class="form-select" required>';

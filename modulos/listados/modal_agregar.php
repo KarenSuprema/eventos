@@ -1,5 +1,5 @@
 <?php
-    $select = $Invitados->selectEventos();
+    $select = $Invitados->selectEventos($_SESSION['id_usuario']);
 ?>
 <form id="frmAgregarInvitado" onsubmit="return agregarInvitado()">
 <div class="modal fade" id="modal_agregar_invitado" tabindex="-1" aria-labelledby="modal_agregar_invitadoLabel" aria-hidden="true">
